@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="Index.css" />
+        <title></title>
+    </head>
+    <body>
+        <h3>Register to be an Avenger</h3>
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+        <form  action="/signup" method="post">
+        {% csrf_token %}
+            <label for="firstname"> Avenger first name :</label>
+            <input type="text" name="firstname" id="firstname"  placeholder = "enter first name (only alphabets)" required />
+            <br /> <br />
+
+            <label for="lastname"> Avenger last name :</label>
+            <input type="text" name="lastname" id="lastname" placeholder="enter surname "/>
+            <br /> <br />
+            <label for="username"> Avenger hero's name :</label>
+            <input type="text" name="username" id="username"  placeholder = "enter hero's name (only alphabets)" required />
+            <br /> <br />
+            <label for="email"> Avenger Email:</label>
+            <input type="email" name="email" id="email" placeholder="enter email " required/>
+            <br /> <br />
+            <label for="pass1">Password:</label>
+            <input type="password" name="pass1" id="pass1" placeholder="enter password "required/>
+            <br /> <br />
+            <label for="confirm">Confirm Password:</label>
+            <input type="password" name="confirm" id="confirm" placeholder="again enter password" />
+            <br /> <br />
+            <button type ="submit"> signup </button>
+            </form>
+
+
+        <script src="Index.js"></script>
+    </body>
+</html>
