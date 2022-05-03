@@ -7,21 +7,24 @@
         <title></title>
     </head>
     <body>
-        <h3>Hello Avenger please login to continue</h3>
+
+
 
           {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-    </div>
-    {% endfor %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+          {% endfor %}
+
+        <h3>Hello Avenger please login to continue</h3>
 
         <form  action="/login" method="post">
-        {% csrf_token %}
+            {% csrf_token %}
             <label for=""> hero name :</label>
-            <input type="text" name="username " id="username"  placeholder = "create a username" required />
+            <input type="text" name="username " id="username"  placeholder = "ENTER USER NAME " required />
             <br /> <br />
 
             <label for=""> password :</label>
@@ -30,7 +33,7 @@
              <br />
 
             <button type ="submit"> login </button>
-            </form>
+        </form>
 
 
         <script src="Index.js"></script>
