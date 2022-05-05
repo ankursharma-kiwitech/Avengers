@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-   {%for message in messages %}
-   <div class="alert alert-{{messages.tags}} alert-dismissible fade show" role "alert">
-   <strong>Message:</strong> {{message}}
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-   <span aria-hidden="true">&times;</span>
-   </button>
-   </div>
-   {% endfor %}
+       {%for message in messages %}
+       <div class="alert alert-{{messages.tags}} alert-dismissible fade show" role "alert">
+       <strong>Message:</strong> {{message}}
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+       </button>
+       </div>
+       {% endfor %}
 
 
-    <h3>Avengers</h3>
+        <h3>Avengers</h3>
 
 
-    {% if user.is_authenticated %}
-    <h3>Hello {{firstname}}!</h3>
-    <h4>You're successfully logged in.</h4>
-    <button type="submit"><a href="/signout">SignOut</a></button>
+        {% if user.is_authenticated %}
+        <h3>Hello {{firstname}}!</h3>
+        <h4>You're successfully logged in.</h4>
+        <button type="submit"><a href="/signout">SignOut</a></button>
 
 
-    {% else %}
-        <button type="submit"> <a href="/signup">  signup  </a> </button>
-        <button type="submit"> <a href="/login">  Avenger login </a> </button>
-        <button type="submit"><a href ="/logout">Avenger logout </a> </button>
+        {% else %}
+            <button type="submit"> <a href="/signup">  signup  </a> </button>
+            <button type="submit"> <a href="/login">  Avenger login </a> </button>
+            <button type="submit"><a href ="/logout">Avenger logout </a> </button>
 
-    {% endif %}
+        {% endif %}
 
-	<script src="index.js"></script>
+        <script src="index.js"></script>
   </body>
 </html>
